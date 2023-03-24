@@ -54,7 +54,7 @@ void perf()
 
     // 尝试启动实例，如果失败则从函数中返回
     bool ok = cpmi.start(
-        [] { return yolo_detector::load("/home/uisee/disk/dl_model_deploy/trt-infer-refactor/models/yolov8n.transd.engine", Type::V8); },
+        [] { return yolo_detector::load("/path/to/trt-infer-frame/models/yolov8n.transd.engine", Type::V8); },
         max_infer_batch);
 
     if (!ok)
@@ -88,7 +88,7 @@ void batch_inference()
     std::vector<cv::Mat> images{cv::imread("../inference/car.jpg"),
                                 cv::imread("../inference/gril.jpg"),
                                 cv::imread("../inference/group.jpg")};
-    auto yolo = yolo_detector::load("/home/uisee/disk/dl_model_deploy/trt-infer-refactor/models/yolov8n.transd.engine", Type::V8);
+    auto yolo = yolo_detector::load("/path/to/trt-infer-frame/models/yolov8n.transd.engine", Type::V8);
     if (yolo == nullptr)
         return;
 
@@ -124,7 +124,7 @@ void batch_inference()
 void single_inference()
 {
     cv::Mat image = cv::imread("../inference/car.jpg");
-    auto yolo = yolo_detector::load("/home/uisee/disk/dl_model_deploy/trt-infer-refactor/models/yolov8n-seg.b1.transd.engine", Type::V8Seg);
+    auto yolo = yolo_detector::load("/path/to/trt-infer-frame/models/yolov8n-seg.b1.transd.engine", Type::V8Seg);
     if (yolo == nullptr)
         return;
 

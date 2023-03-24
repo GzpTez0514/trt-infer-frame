@@ -22,8 +22,8 @@ link_directories(/usr/local/cuda-11.1/lib64)
 set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
 
 # tensorrt
-include_directories(/home/uisee/disk/TensorRT-8.2.1.8/include)
-link_directories(/home/uisee/disk/TensorRT-8.2.1.8/lib)
+include_directories(/path/to/TensorRT-8.2.1.8/include)
+link_directories(/path/to/TensorRT-8.2.1.8/lib)
 
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -fsanitize=address -Ofast -Wfatal-errors -D_MWAITXINTRIN_H_INCLUDED -O2")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wfatal-errors -D_MWAITXINTRIN_H_INCLUDED -O0")
